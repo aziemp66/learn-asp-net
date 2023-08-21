@@ -3,18 +3,29 @@ var app = builder.Build();
 
 // middleware 1
 app.Use(
-    async (HttpContext ctx, RequestDelegate next) =>
+    async (ctx, next) =>
     {
-        await ctx.Response.WriteAsync("Hello China\n");
+        await ctx.Response.WriteAsync("Hello 1\n");
         await next(ctx);
+        await ctx.Response.WriteAsync("Hello 4\n");
     }
 );
 
 // middleware 2
-app.Run(
-    async (HttpContext ctx) =>
+app.Use(
+    async (ctx, next) =>
     {
-        await ctx.Response.WriteAsync("Hello World");
+        await ctx.Response.WriteAsync("Hello 2\n");
+        await next(ctx);
+        await ctx.Response.WriteAsync("Hello 3\n");
+    }
+);
+
+// middleware 3
+app.Run(
+    async (ctx) =>
+    {
+        await ctx.Response.WriteAsync("Hello World\n");
     }
 );
 
