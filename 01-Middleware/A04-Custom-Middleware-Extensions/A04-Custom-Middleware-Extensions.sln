@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "A04-Custom-Middleware-Extensions", "A04-Custom-Middleware-Extensions.csproj", "{7497C0CF-D2CE-4D56-893E-ADC4E5F4F614}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A05-Conventional-Custom-Middleware-Clss", "..\A05-Conventional-Custom-Middleware-Clss\A05-Conventional-Custom-Middleware-Clss.csproj", "{255C45DD-3C3C-4052-867F-DBB3C96AECF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7497C0CF-D2CE-4D56-893E-ADC4E5F4F614}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7497C0CF-D2CE-4D56-893E-ADC4E5F4F614}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7497C0CF-D2CE-4D56-893E-ADC4E5F4F614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{255C45DD-3C3C-4052-867F-DBB3C96AECF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{255C45DD-3C3C-4052-867F-DBB3C96AECF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{255C45DD-3C3C-4052-867F-DBB3C96AECF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{255C45DD-3C3C-4052-867F-DBB3C96AECF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
