@@ -1,6 +1,7 @@
 using A04_Custom_Middleware_Extesions.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddTransient<ApiRequestMiddleware>();
 
 var app = builder.Build();
@@ -16,7 +17,9 @@ app.Use(
 );
 
 // Middleware 2
-app.UseMiddleware<ApiRequestMiddleware>();
+// app.UseMiddleware<ApiRequestMiddleware>();
+
+app.UseApiRequestMiddleware();
 
 // Middleware 3
 app.Use(
