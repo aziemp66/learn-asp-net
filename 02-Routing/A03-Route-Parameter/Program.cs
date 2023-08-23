@@ -23,6 +23,15 @@ app.UseEndpoints(e =>
             await ctx.Response.WriteAsync($"Welcome to {employeeName}'s Company Profile");
         }
     );
+
+    e.Map(
+        "class/{year=2023}",
+        async (ctx) =>
+        {
+            string? year = ctx.Request.RouteValues["year"]?.ToString();
+            await ctx.Response.WriteAsync($"Welcome to Class of {year}");
+        }
+    );
 });
 
 app.Run(async ctx =>
