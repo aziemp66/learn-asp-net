@@ -91,10 +91,32 @@ app.UseEndpoints(e =>
         // Matches with an integer value less than or equal to the specified value.
         //
         // Eg: {age:max(100)} matches with -1, 1, 18, 100
+        //
+        // range(min,max)
+        //
+        // Matches with an integer value between the specified minimum and maximum values (both numbers including).
+        //
+        // Eg: {age:range(18,100)} matches with 18, 19, 99, 100
+        //
+        //
+        // alpha
+        //
+        // Matches with a string that contains only alphabets (A-Z) and (a-z).
+        //
+        // Eg: {username:alpha} matches with rick, william
         async ctx =>
         {
             int employeeId = Convert.ToInt32(ctx.Request.RouteValues["id"]);
             await ctx.Response.WriteAsync($"Employee ID is {employeeId}");
+        }
+    );
+
+    e.Map(
+        "/employee/email/{email:regex(^[a-zA-z0-9-.+]+@[a-zA-z0-9-.]+.[a-zA-z]{{2,}}$)}",
+        async ctx =>
+        {
+            string email = ctx.Request.RouteValues["email"]?.ToString()!;
+            await ctx.Response.WriteAsync($"Employee Email is {email}");
         }
     );
 });
