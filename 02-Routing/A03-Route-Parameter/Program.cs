@@ -29,7 +29,21 @@ app.UseEndpoints(e =>
         async (ctx) =>
         {
             string? year = ctx.Request.RouteValues["year"]?.ToString();
-            await ctx.Response.WriteAsync($"Welcome to Class of {year}");
+            await ctx.Response.WriteAsync($"Welcome to Class of {year ?? "2023"}");
+        }
+    );
+
+    e.Map(
+        "zoo/{animal}/{animalName?}",
+        async ctx =>
+        {
+            string animal = ctx.Request.RouteValues["animal"]?.ToString()!;
+            string? animalName = ctx.Request.RouteValues["animalName"]?.ToString();
+            await ctx.Response.WriteAsync($"This is a {animal}\n");
+            if (animalName != null)
+            {
+                await ctx.Response.WriteAsync($"It's name is {animalName}");
+            }
         }
     );
 });
